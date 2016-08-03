@@ -1,0 +1,40 @@
+.slide3 {
+  ul {
+    list-style: none;
+    width: 70%;
+    margin: auto;
+    li {
+      &:before {
+        content: "-";
+      }
+    }
+  }
+
+  .quote {
+    text-align: right;
+    span {
+      display: block;
+
+      &:first-child {
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      &:last-child {
+        font-family: TorhokItalic;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .btn-container {
+    text-align: center;
+    padding-top: 2rem;
+
+    button {
+      width: 25%;
+    }
+  }
+
+}
+

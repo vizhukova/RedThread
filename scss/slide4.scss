@@ -1,0 +1,89 @@
+.slide4 {
+
+  .block {
+    box-sizing: border-box;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+
+    &.wrong {
+      h4:after, i:after {
+        background-image: url($res-url + 'wrong_icon.png');
+      }
+    }
+    &.right {
+      h4:after, i:after {
+        background-image: url($res-url + 'right_icon.png');
+      }
+    }
+
+    h4 {
+      position: relative;
+      text-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        bottom: 0;
+        margin-left: 5px;
+      }
+    }
+
+    i {
+      position: relative;
+      width: 7.5rem;
+      height: 7.5rem;
+      display: inline-block;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    i.wrong1 {
+      background-image: url($res-url + 'wrong1.png');
+    }
+    i.wrong2 {
+      background-image: url($res-url + 'wrong2.png');
+    }
+    i.wrong3 {
+      background-image: url($res-url + 'wrong3.png');
+    }
+    i.right1 {
+      background-image: url($res-url + 'right1.png');
+    }
+    i.right2 {
+      background-image: url($res-url + 'right2.png');
+    }
+    i.right3 {
+      background-image: url($res-url + 'right3.png');
+    }
+    i.right1 {
+
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+}
+

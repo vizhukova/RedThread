@@ -1,0 +1,65 @@
+.slide2 {
+  h1 {
+    font-size: 1.3em;
+    margin: 1.3rem 0 0.8rem 0;
+  }
+  p, ul {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 10px;
+
+    li {
+      min-height: 1.6rem;
+      position: relative;
+
+      &:before {
+        content:"  ҉";
+        padding-right: 10px;
+        color: $active-color;
+        position: absolute;
+        left: -10px;
+      }
+    }
+  }
+
+  strong, em {
+    color: $active-color;
+    font-style: initial;
+  }
+
+  strong {
+    border-bottom: solid 2px $active-color;
+  }
+
+  .icon-container {
+    text-align: center;
+    .icon {
+      display: inline-block;
+
+      img {
+        max-height: 4.5rem;
+        max-width: 4.5rem;
+        width: auto;
+        height: auto;
+      }
+      span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0 1rem;
+      }
+
+    }
+  }
+
+  .btn-container {
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
+
