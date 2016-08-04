@@ -91,7 +91,7 @@
   margin: 1.3rem 0 0.8rem 0; }
 
 .slide2 p, .slide2 ul {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400; }
 
 .slide2 ul {
@@ -106,7 +106,7 @@
       padding-right: 10px;
       color: #f00035;
       position: absolute;
-      left: -10px; }
+      left: -20px; }
 
 .slide2 strong, .slide2 em {
   color: #f00035;
@@ -132,7 +132,9 @@
 
 .slide2 .btn-container {
   text-align: center;
-  padding-top: 2rem; }
+  padding-top: 1.5rem; }
+  .slide2 .btn-container button {
+    min-width: 25%; }
 
 .slide3 ul {
   list-style: none;
@@ -161,20 +163,31 @@
 
 .slide4 .block {
   box-sizing: border-box;
-  width: 50%;
+  width: 48%;
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: top;
+  text-align: center; }
   .slide4 .block.wrong h4:after, .slide4 .block.wrong i:after {
     background-image: url("./../../res/wrong_icon.png"); }
   .slide4 .block.right h4:after, .slide4 .block.right i:after {
     background-image: url("./../../res/right_icon.png"); }
+  .slide4 .block.right i {
+    width: 8rem;
+    height: 8rem;
+    background-size: 90%;
+    overflow: auto;
+    margin: 0; }
+    .slide4 .block.right i:after {
+      bottom: 2rem;
+      right: 1.5rem; }
   .slide4 .block h4 {
     position: relative;
     text-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center; }
+    text-align: center;
+    margin: 1rem 0; }
     .slide4 .block h4:after {
       content: "";
       position: absolute;
@@ -183,20 +196,23 @@
       background-size: 100%;
       background-repeat: no-repeat;
       bottom: 0;
-      margin-left: 5px; }
+      margin-left: 10px; }
   .slide4 .block i {
     position: relative;
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     display: inline-block;
-    background-size: 90%;
+    background-size: 85%;
     background-repeat: no-repeat;
-    background-position: center center; }
+    background-position: center center;
+    margin-right: 1.5rem; }
+    .slide4 .block i:last-child {
+      margin: 0; }
     .slide4 .block i:after {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 1rem;
+      height: 1rem;
       background-size: 100%;
       background-repeat: no-repeat;
       bottom: 0;
@@ -214,7 +230,49 @@
   .slide4 .block i.right3 {
     background-image: url("./../../res/right3.png"); }
   .slide4 .block span {
-    display: block; }
+    display: block;
+    font-size: 0.9rem; }
+
+.slide4 .video-container {
+  text-align: center;
+  padding-top: 1rem; }
+  .slide4 .video-container video {
+    width: 20rem;
+    height: auto; }
+
+.slide4 .btn-container {
+  text-align: center;
+  padding-top: 1.5rem; }
+  .slide4 .btn-container button {
+    min-width: 15%; }
+
+.slide5 p {
+  text-align: center;
+  margin: 0.1rem 0;
+  font-size: 0.8rem; }
+
+.slide5 .photo-container {
+  text-align: center; }
+  .slide5 .photo-container .photo {
+    display: inline-block;
+    width: 11rem;
+    vertical-align: middle; }
+    .slide5 .photo-container .photo img {
+      width: 7rem;
+      height: auto; }
+    .slide5 .photo-container .photo span {
+      display: block;
+      font-size: 0.9rem; }
+      .slide5 .photo-container .photo span:nth-child(2) {
+        font-weight: 600; }
+      .slide5 .photo-container .photo span:nth-child(3) {
+        font-size: 0.7rem; }
+
+.slide5 .btn-container {
+  text-align: center;
+  padding-top: 1rem; }
+  .slide5 .btn-container button {
+    min-width: 23%; }
 
 html {
   font-size: 16px; }
@@ -362,15 +420,15 @@ img.background-node {
     .footer p:first-child {
       padding-top: 0.5%; }
 
-.slide1, .slide2, .slide3, .slide4 {
+.slide1, .slide2, .slide3, .slide4, .slide5 {
   margin: 0 18%; }
 
 h1 {
   text-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 700;
   text-align: center;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   text-transform: uppercase; }
 
 button {
@@ -391,7 +449,7 @@ button {
     padding: 0 15px; }
   .slide1 {
     margin: 0 15px; }
-  .slide2, .slide3 {
+  .slide2, .slide3, .slide4, .slide5 {
     margin: 0 4rem; }
   .slide1 .right-block {
     background-size: 100%;

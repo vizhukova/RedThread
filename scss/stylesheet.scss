@@ -18,6 +18,7 @@ $page-padding: 0 18%;
 @import './slide2';
 @import './slide3';
 @import './slide4';
+@import './slide5';
 
 html {
   font-size: 16px;
@@ -209,16 +210,16 @@ img.background-node {
   }
 }
 
-.slide1, .slide2, .slide3, .slide4 {
+.slide1, .slide2, .slide3, .slide4, .slide5 {
   margin: $page-padding;
 }
 
 h1 {
   text-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 700;
   text-align: center;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   text-transform: uppercase;
 }
 
@@ -246,7 +247,7 @@ button {
      margin: 0 15px;
   }
 
-  .slide2, .slide3 {
+  .slide2, .slide3, .slide4, .slide5 {
     margin: 0 4rem;
   }
 
