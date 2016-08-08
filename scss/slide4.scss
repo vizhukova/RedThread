@@ -110,9 +110,10 @@
     text-align: center;
     padding-top: 1rem;
 
-    video {
+    iframe, video {
       width: 20rem;
       height: auto;
+      border: none;
     }
   }
 
@@ -121,7 +122,7 @@
     padding-top: 1.5rem;
 
     button {
-      min-width: 15%;
+      min-width: 20%;
     }
   }
 

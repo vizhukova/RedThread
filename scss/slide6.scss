@@ -1,0 +1,67 @@
+.slide6 {
+
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .quote {
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 2rem;
+    span {
+      display: block;
+      text-align: right;
+    }
+  }
+
+  .comment, button {
+    width: 25%;
+    min-width: 20rem;
+  }
+
+  .slider {
+    max-height: 9rem;
+  }
+
+  .comment {
+    text-align: center;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+
+    h6, p {
+      background-color: #1b272c;
+    }
+
+    h6 {
+      font-weight: 700;
+      padding: 0.2rem;
+      font-size: 1em;
+      margin: 0.5rem 0;
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      padding: 0.3rem;
+      text-align: left;
+      span {
+        font-weight: 800;
+      }
+      span.price {
+        color: $active-color;
+      }
+    }
+  }
+
+
+
+}
+

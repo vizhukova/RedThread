@@ -1,5 +1,11 @@
 .slide5 {
 
+  text-align: center;
+
+  h1{
+    margin: 1rem 0;
+  }
+
   p {
     text-align: center;
     margin: 0.1rem 0;
@@ -8,10 +14,13 @@
 
   .photo-container {
     text-align: center;
+    max-width: 570px;
+    display: inline-block;
     .photo {
       display: inline-block;
       width: 11rem;
       vertical-align: middle;
+      padding: 0.3rem 0;
       img {
         width: 7rem;
         height: auto;

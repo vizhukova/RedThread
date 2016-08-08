@@ -1,24 +1,25 @@
 $res-url: './../../res/';
 $active-color: #f00035;
-$header-height: 80px;
-$footer-height: 60px;
+$header-height: 65px;
+$footer-height: 45px;
 $page-padding: 0 18%;
 
 @font-face {
-    font-family: TorhokItalic;
-    src: url($res-url + 'font/Torhok_Italic.ttf');
-}
-@font-face {
-    font-family: Chickpeas;
-    src: url($res-url + 'font/Chickpeas.ttf');
+  font-family: Chickpeas;
+  src: url($res-url + 'font/Chickpeas.ttf');
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
+
 @import './slide1';
 @import './slide2';
 @import './slide3';
 @import './slide4';
 @import './slide5';
+@import './slide6';
+@import './slide7';
+@import './slide8';
 
 html {
   font-size: 16px;
@@ -32,12 +33,17 @@ body {
   left: 0;
   right: 0;
   margin: 0;
+  background-size: 100%;
+}
+
+.mobile {
+  display: none !important;
 }
 
 .swiper-container {
   width: 100%;
   height: calc(100% - #{$header-height + $footer-height});
-  padding-top: 80px;
+  padding-top: $header-height;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
 }
@@ -55,9 +61,13 @@ body {
   left: 0;
   right: 0;
 
-  &>* {
+  & > * {
     display: inline-block;
     vertical-align: top;
+  }
+
+  .btn-container {
+    display: none;
   }
 
   .label {
@@ -87,7 +97,7 @@ body {
         font-weight: 600;
         font-size: 2.1rem;
         display: block;
-        line-height: 50px;
+        line-height: $header-height / 2;
       }
       span:last-child {
         width: 299px;
@@ -102,7 +112,7 @@ body {
     width: 60%;
     font-size: 1.1rem;
 
-      ul {
+    ul {
       list-style: none;
       margin: 0;
       width: 100%;
@@ -129,7 +139,7 @@ body {
           }
         }
 
-        &.active{
+        &.active {
           color: $active-color;
           &:after {
             content: "";
@@ -150,10 +160,10 @@ body {
     float: right;
     color: #fafafa;
     font-family: OpenSans;
-    font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
-    padding: 1.5% 0;
+    font-size: 1.1rem;
+    padding: 0.2rem 0;
     p {
       margin: 0;
 
@@ -168,14 +178,52 @@ body {
   }
 }
 
-img.background-node {
+.header-up {
+  @extend .header;
+  height: 3rem !important;
+  background-color: #f00035 !important;
+  margin: 0 !important;
+  background-image: url("./../../res/burger.png");
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+
+  .menu {
     position: absolute;
-    bottom: 6%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 50%;
-    height: auto;
+    top: 3rem;
+    max-width: 15rem;
+    z-index: 2 !important;
+    width: 80%;
+    .label {
+      display: block;
+      width: 100%;
+      height: 5rem;
+      .content {
+        span {
+          font-size: 0.6rem;
+        }
+        span:first-child {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    ul {
+      background: $active-color;
+    }
+    button {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+img.background-node {
+  position: absolute;
+  bottom: $footer-height - 13px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 40%;
+  height: auto;
 }
 
 .footer {
@@ -205,12 +253,12 @@ img.background-node {
     margin: 0;
 
     &:first-child {
-      padding-top: 0.5%;
+      padding-top: 0.1rem;
     }
   }
 }
 
-.slide1, .slide2, .slide3, .slide4, .slide5 {
+.slide {
   margin: $page-padding;
 }
 
@@ -221,6 +269,10 @@ h1 {
   text-align: center;
   margin: 1.5rem 0;
   text-transform: uppercase;
+}
+
+.btn-container {
+  text-align: center;
 }
 
 button {
@@ -235,6 +287,77 @@ button {
   text-transform: uppercase;
 }
 
+.quote {
+  text-align: right;
+  span {
+    display: block;
+
+    &:first-child {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    &:last-child {
+      font-family: 'Marck Script', cursive;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+}
+.mobile-page {
+  color: #fff;
+};
+
+#carousel {
+  width: 500px;
+  height: 150px;
+  display: relative;
+  margin: auto;
+
+  img {
+    display: hidden; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+  }
+
+  .arrow {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 20;
+
+    &.arrow_right {
+      background-image: url($res-url + 'arrow_right.png');
+      right: 0;
+
+      &.active {
+        background-image: url($res-url + 'arrow_right_active.png');
+      }
+    }
+
+    &.arrow_left {
+      background-image: url($res-url + 'arrow_left.png');
+      left: 0;
+
+      &.active {
+        background-image: url($res-url + 'arrow_left_active.png');
+      }
+
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.overflow-no {
+  overflow: initial;
+}
+
 @media screen and (max-device-width: 1520px) {
   html {
     font-size: 15px;
@@ -244,10 +367,10 @@ button {
   }
 
   .slide1 {
-     margin: 0 15px;
+    margin: 0 15px;
   }
 
-  .slide2, .slide3, .slide4, .slide5 {
+  .slide {
     margin: 0 4rem;
   }
 
@@ -261,30 +384,31 @@ button {
 
     .left-block {
       width: 60%;
-       p, a {
+      p, a {
         padding-left: 20%;
         width: 30%;
       }
-       img {
+      img {
         top: 37%;
       }
     }
   }
 }
+
 @media screen and (max-device-width: 1025px) {
 
   .slide1 {
-   .left-block {
-     width: 52%;
-     p, a {
-       padding-left: 6%;
-       width: 55%;
-     }
-     img {
-       top: 50%;
-       height: 100%;
-     }
-   }
+    .left-block {
+      width: 52%;
+      p, a {
+        padding-left: 6%;
+        width: 55%;
+      }
+      img {
+        top: 50%;
+        height: 100%;
+      }
+    }
     .right-block {
       padding: 3.6% 1%;
       width: 35%;
@@ -315,9 +439,228 @@ button {
 @media screen and (max-device-width: 800px) {
 
   html {
-    font-size: 13px;
+    font-size: 20px;
   }
 
+  body {
+    background-image: url($res-url + 'slide1_background.png');
+    background-color: #0f141c;
+    background-size: 100%;
+    overflow: hidden;
+
+    &+.swiper-container {
+      overflow: hidden;
+      height: auto;
+    }
+
+  }
+
+  .swiper-container {
+    height: auto;
+    padding-top: 0;
+    margin-bottom: 1rem;
+
+    .slide {
+      margin: 0 1rem;
+
+    }
+  }
+
+  .desktop-page, .footer, img.background-node {
+    display: none;
+  }
+
+  .mobile {
+      display: block !important;
+    }
+
+  .header {
+    background-color: transparent;
+    height: initial;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin: 1rem;
+    padding: 0;
+    position: initial;
+
+    button {
+      width: 85%;
+      font-size: 0.7rem;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: 2rem;
+    }
 
 
+    .phone, .phone p,.menu, .menu li {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .phone, .menu {
+      display: block;
+      text-align: center;
+    }
+
+    .menu {
+      font-size: 1rem;
+      z-index: 1;
+
+      li {
+        line-height: 50px !important;
+        z-index:1;
+
+        &:after {
+          border-bottom: solid 1px #f00035 !important;
+          left: 0 !important;
+          right: 0 !important;
+          width: 47%;
+          margin: auto;
+        }
+      }
+    }
+
+    .phone {
+      p.call {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      p {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+
+      p:first-child {
+        padding-top: 2rem;
+      }
+    }
+
+    .label {
+      display: none;
+    }
+
+    .hand-pic {
+      position: absolute;
+      left: -38px;
+      bottom: 4.5rem;
+      height: 8rem;
+
+    }
+  }
+
+  .slide2 {
+    ul {
+      margin-left: 10px;
+    }
+
+    .icon-container {
+      .icon {
+        width: 50%;
+        min-width: 200px;
+        padding: 0.1rem 0;
+      }
+    }
+  }
+
+  .slide3 {
+    ul {
+      padding: 0;
+      width: 100%;
+    }
+    .quote {
+      margin: 2rem 0;
+    }
+
+    .btn-container {
+      button {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .slide4 {
+    .block {
+      width: 100%;
+
+      span {
+        font-size: 0.7rem;
+      }
+    }
+
+    .video-container {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+
+  .slide5 {
+     .btn-container {
+       button {
+        min-width: 100%;
+        width: 100%;
+      }
+     }
+  }
+
+  .slide6 {
+    #carousel {
+      width: 90%;
+     height: 100px;
+      margin-top: 3rem;
+
+      .arrow_left {
+        background-size: 70%;
+        background-position: left;
+      }
+
+      .arrow_right {
+        background-size: 70%;
+        background-position: right;
+      }
+    }
+
+    .comment {
+      width: 25%;
+      min-width: 100%;
+    }
+
+    button {
+      min-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .slide7 {
+    h1 {
+      margin: 1.5rem 0;
+    }
+
+    .btn-container {
+      button {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .slide8 {
+    .form {
+      width: 100%;
+    }
+  }
 }
+
+@media screen and (max-device-width: 450px) {
+  body {
+    background-size: inherit;
+  }
+}
+
