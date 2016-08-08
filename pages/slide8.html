@@ -8,30 +8,31 @@
         <p>Посто заполните правильно форму</p>
         <p>и начните притягивать удачу прямо сейчас!</p>
 
-        <form>
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="text" placeholder="Ваша фамилия" required>
-            <input type="text" placeholder="Ваш номет телефона" required>
-            <input type="text" placeholder="Ваш email " required>
+        <form method="post" action="http://localhost:63342/RedThread/app.php">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="text" name="surname" placeholder="Ваша фамилия" required>
+            <input type="text" name="number" placeholder="Ваш номет телефона" required>
+            <input type="email" name="email" placeholder="Ваш email " required>
 
-            <select required>
+            <select name="city" required>
                 <option disabled selected value> Город </option>
                 <option value="">city1</option>
                 <option value="">city2</option>
             </select>
 
-            <select required>
+            <select name="delivery" required>
                 <option disabled selected value> Способ доставки  </option>
                 <option value="">delivery1</option>
                 <option value="">delivery2</option>
             </select>
 
-            <button>Заказать Красную нить</button>
+            <button onClick="openFormModal()">Заказать Красную нить</button>
+            <input type="submit">
         </form>
 
          <p class="license">
             <span>Ваша информация под защитой</span>
-            <span>политика конфендециальности</span>
+            <a>политика конфендециальности</a>
         </p>
     </div>
 

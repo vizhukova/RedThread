@@ -19,5 +19,24 @@
     }
   }
 
+  .video {
+    position: relative;
+    text-align: center;
+  }
+
+  .video-container {
+    position: absolute;
+    top: -6%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    z-index: 10;
+
+    embed {
+      border: none;
+    }
+  }
+
 }
 

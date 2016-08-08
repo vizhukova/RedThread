@@ -12,6 +12,7 @@ $page-padding: 0 18%;
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic);
 @import url(https://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
 
+
 @import './slide1';
 @import './slide2';
 @import './slide3';
@@ -191,7 +192,7 @@ body {
   .menu {
     position: absolute;
     top: 3rem;
-    max-width: 15rem;
+    max-width: 15rem !important;
     z-index: 2 !important;
     width: 80%;
     .label {
@@ -307,7 +308,7 @@ button {
   color: #fff;
 };
 
-#carousel {
+.carousel {
   width: 500px;
   height: 150px;
   display: relative;
@@ -358,6 +359,35 @@ button {
   overflow: initial;
 }
 
+#modalForm {
+
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+
+  .ground {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background: black;
+    opacity: 0.7;
+  }
+
+  .slide8 {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    margin: auto;
+    margin-top: 5%;
+  }
+}
+
 @media screen and (max-device-width: 1520px) {
   html {
     font-size: 15px;
@@ -389,7 +419,7 @@ button {
         width: 30%;
       }
       img {
-        top: 37%;
+        top: 46%;
       }
     }
   }
@@ -405,7 +435,7 @@ button {
         width: 55%;
       }
       img {
-        top: 50%;
+        top: 62%;
         height: 100%;
       }
     }
@@ -434,6 +464,16 @@ button {
 
 }
 
+@media screen and (min-device-width: 801px) {
+  .desktop-page, .footer, img.background-node, div.header {
+    display: block;
+  }
+
+  .header-up {
+    display: none;
+  }
+
+}
 /*mobile version*/
 
 @media screen and (max-device-width: 800px) {
@@ -584,6 +624,10 @@ button {
         max-width: 100%;
       }
     }
+
+    .video-container {
+      top: -25%;
+    }
   }
 
   .slide4 {
@@ -612,21 +656,7 @@ button {
   }
 
   .slide6 {
-    #carousel {
-      width: 90%;
-     height: 100px;
-      margin-top: 3rem;
 
-      .arrow_left {
-        background-size: 70%;
-        background-position: left;
-      }
-
-      .arrow_right {
-        background-size: 70%;
-        background-position: right;
-      }
-    }
 
     .comment {
       width: 25%;
@@ -653,9 +683,25 @@ button {
 
   .slide8 {
     .form {
-      width: 100%;
+      width: 80%;
     }
   }
+
+   .carousel {
+      width: 90%;
+     height: 100px;
+      margin-top: 3rem;
+
+      .arrow_left {
+        background-size: 70%;
+        background-position: left;
+      }
+
+      .arrow_right {
+        background-size: 70%;
+        background-position: right;
+      }
+    }
 }
 
 @media screen and (max-device-width: 450px) {

@@ -31,7 +31,7 @@
             </ul>
        </div>
 
-       <button class="mobile">хочу купить нить со скидкой</button>
+       <button class="mobile" onClick="openFormModal()">хочу купить нить со скидкой</button>
 
        <img class="hand-pic mobile" src="./../res/mobile_hand.png" alt="">
     </div>
@@ -80,7 +80,7 @@
                         <h4>И ПОЛУЧИТЕ СКИДКУ!</h4>
                         <p class="old-price"> Старая цена 750 рублей</p>
                         <p class="price"> Новая цена <b>со скидкой</b> всего <span class="new-price">250 рублей</span></p>
-                        <button class="buy">ХОЧУ КУПИТЬ НИТЬ СО СКИДКОЙ</button>
+                        <button class="buy" onClick="openFormModal()">ХОЧУ КУПИТЬ НИТЬ СО СКИДКОЙ</button>
                     </div>
                 </div>
             
@@ -137,7 +137,7 @@
                 </div>
             
                 <div class="btn-container">
-                    <button>Заказать консультацию</button>
+                    <button onClick="openFormModal()">Заказать консультацию</button>
                 </div>
             
             </div>
@@ -159,10 +159,29 @@
                     <span>(Овидий)</span>
                 </p>
             
-                <div style="background: black;height: 166px;"></div>
+                <div class="video">
+                      <div id="video-carousel" class="carousel" class="slider">
+                        <img src="https://i.ytimg.com/vi/p_ttqv_ZU2Y/default.jpg" data-url="https://www.youtube.com/embed/p_ttqv_ZU2Y?rel=0">
+                        <img src="https://i.ytimg.com/vi/7ECDTQ_Rewc/default.jpg" data-url="https://www.youtube.com/embed/7ECDTQ_Rewc?rel=0">
+                        <img src="https://i.ytimg.com/vi/k5c5Ppow7Y4/default.jpg" data-url="https://www.youtube.com/embed/k5c5Ppow7Y4?rel=0">
+                        <img src="https://i.ytimg.com/vi/4yqUIiXScD4/default.jpg" data-url="https://www.youtube.com/embed/4yqUIiXScD4?rel=0">
+                        <div class="arrow arrow_left active"></div>
+                        <div class="arrow arrow_right active"></div>
+                    </div>
+            
+                    <div class="video-container">
+                        <embed class="slider hidden" id="iframe-video" frameborder="0"
+                               allowfullscreen="allowfullscreen"
+                               mozallowfullscreen="mozallowfullscreen"
+                               msallowfullscreen="msallowfullscreen"
+                               oallowfullscreen="oallowfullscreen"
+                               webkitallowfullscreen="webkitallowfullscreen" src=""></embed>
+                    </div>
+                </div>
+            
             
                 <div class="btn-container">
-                    <button>Заказать красную нить</button>
+                    <button onClick="openFormModal()">Заказать красную нить</button>
                 </div>
             
             </div>
@@ -189,13 +208,14 @@
             
                 <div class="video-container">
                     <iframe class="slider"
-                src="https://www.youtube.com/embed/p_ttqv_ZU2Y">
+                    src="https://www.youtube.com/embed/p_ttqv_ZU2Y"
+                    onload="resizeIframe(this)">
                 </iframe>
                 </div>
             
             
                 <div class="btn-container">
-                    <button>Заказать оригинал нити</button>
+                    <button onClick="openFormModal()">Заказать оригинал нити</button>
                 </div>
             
             </div>
@@ -253,7 +273,7 @@
             
             
                 <div class="btn-container">
-                    <button>Привлечь удачу</button>
+                    <button onClick="openFormModal()">Привлечь удачу</button>
                 </div>
             
             </div>
@@ -270,14 +290,14 @@
             
                 <!--<div class="slider" style="background: black;height: 166px;">-->
             
-                    <div id="carousel" class="slider">
-                        <img src="./../res/red_t1.png" alt="">
-                        <img src="./../res/red_t2.png" alt="">
-                        <img src="./../res/red_t2.png" alt="">
-                        <img src="./../res/red_t3.png" alt="">
-                        <img src="./../res/red_t3.png" alt="">
-                        <img src="./../res/red_t3.png" alt="">
-                        <img src="./../res/red_t3.png" alt="">
+                    <div id="carousel" class="carousel" class="slider">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
+                        <img src="./../res/book1.png" alt="">
                         <div class="arrow arrow_left active"></div>
                         <div class="arrow arrow_right active"></div>
                     </div>
@@ -298,7 +318,7 @@
                 </div>
             
                 <div class="btn-container">
-                    <button>Заказать</button>
+                    <button onClick="openFormModal()">Заказать</button>
                 </div>
             
             </div>
@@ -315,58 +335,16 @@
                 <p>8 (905) 215 66 66</p>
             
                 <div class="btn-container">
-                    <button>Заказать звонок</button>
+                    <button onClick="openFormModal()">Заказать звонок</button>
                 </div>
             
                 <p class="simple">Быть счастливым просто!</p>
                </div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <div class="slide slide8">
-            
-                <div class="form">
-                    <h4>
-                        <p>Заказать оригинальную </p>
-                        <p>красную нить очень легко!</p>
-                    </h4>
-                    <p>Посто заполните правильно форму</p>
-                    <p>и начните притягивать удачу прямо сейчас!</p>
-            
-                    <form>
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="text" placeholder="Ваша фамилия" required>
-                        <input type="text" placeholder="Ваш номет телефона" required>
-                        <input type="text" placeholder="Ваш email " required>
-            
-                        <select required>
-                            <option disabled selected value> Город </option>
-                            <option value="">city1</option>
-                            <option value="">city2</option>
-                        </select>
-            
-                        <select required>
-                            <option disabled selected value> Способ доставки  </option>
-                            <option value="">delivery1</option>
-                            <option value="">delivery2</option>
-                        </select>
-            
-                        <button>Заказать Красную нить</button>
-                    </form>
-            
-                     <p class="license">
-                        <span>Ваша информация под защитой</span>
-                        <span>политика конфендециальности</span>
-                    </p>
-                </div>
-            
-                <p class="quote">
-                    «Если у тебя есть вера, на свете нет ничего невозможного»
-                    <span>(И. Уоллус)</span>
-                </p>
-            
-            </div>
-        </div>
+        <!--<div class="swiper-slide">-->
+            <!--//= pages/slide8.html-->
+        <!--</div>-->
     </div>
 </div>
 
@@ -380,10 +358,58 @@
         </div>
     </div>
 
+     <div id="modalForm" class="hidden">
+         <div class="slide slide8">
+         
+             <div class="form">
+                 <h4>
+                     <p>Заказать оригинальную </p>
+                     <p>красную нить очень легко!</p>
+                 </h4>
+                 <p>Посто заполните правильно форму</p>
+                 <p>и начните притягивать удачу прямо сейчас!</p>
+         
+                 <form method="post" action="http://localhost:63342/RedThread/app.php">
+                     <input type="text" name="name" placeholder="Ваше имя" required>
+                     <input type="text" name="surname" placeholder="Ваша фамилия" required>
+                     <input type="text" name="number" placeholder="Ваш номет телефона" required>
+                     <input type="email" name="email" placeholder="Ваш email " required>
+         
+                     <select name="city" required>
+                         <option disabled selected value> Город </option>
+                         <option value="">city1</option>
+                         <option value="">city2</option>
+                     </select>
+         
+                     <select name="delivery" required>
+                         <option disabled selected value> Способ доставки  </option>
+                         <option value="">delivery1</option>
+                         <option value="">delivery2</option>
+                     </select>
+         
+                     <button onClick="openFormModal()">Заказать Красную нить</button>
+                     <input type="submit">
+                 </form>
+         
+                  <p class="license">
+                     <span>Ваша информация под защитой</span>
+                     <a>политика конфендециальности</a>
+                 </p>
+             </div>
+         
+             <p class="quote">
+                 «Если у тебя есть вера, на свете нет ничего невозможного»
+                 <span>(И. Уоллус)</span>
+             </p>
+         
+         </div>
+         <div class="ground"></div>
+      </div>
+
     <script type="text/javascript" src="./../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./../bower_components/Swiper/dist/js/swiper.min.js"></script>
     <script type="text/javascript" src="./../bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
-    <script type="text/javascript" src="./../js/jquery.waterwheelCarousel.min.js"></script>
+    <script type="text/javascript" src="./../js/jquery.waterwheelCarousel.js"></script>
     <script type="text/javascript" src="./../js/main.js"></script>
 </body>
 </html>

@@ -14,10 +14,29 @@
         <span>(Овидий)</span>
     </p>
 
-    <div style="background: black;height: 166px;"></div>
+    <div class="video">
+          <div id="video-carousel" class="carousel" class="slider">
+            <img src="https://i.ytimg.com/vi/p_ttqv_ZU2Y/default.jpg" data-url="https://www.youtube.com/embed/p_ttqv_ZU2Y?rel=0">
+            <img src="https://i.ytimg.com/vi/7ECDTQ_Rewc/default.jpg" data-url="https://www.youtube.com/embed/7ECDTQ_Rewc?rel=0">
+            <img src="https://i.ytimg.com/vi/k5c5Ppow7Y4/default.jpg" data-url="https://www.youtube.com/embed/k5c5Ppow7Y4?rel=0">
+            <img src="https://i.ytimg.com/vi/4yqUIiXScD4/default.jpg" data-url="https://www.youtube.com/embed/4yqUIiXScD4?rel=0">
+            <div class="arrow arrow_left active"></div>
+            <div class="arrow arrow_right active"></div>
+        </div>
+
+        <div class="video-container">
+            <embed class="slider hidden" id="iframe-video" frameborder="0"
+                   allowfullscreen="allowfullscreen"
+                   mozallowfullscreen="mozallowfullscreen"
+                   msallowfullscreen="msallowfullscreen"
+                   oallowfullscreen="oallowfullscreen"
+                   webkitallowfullscreen="webkitallowfullscreen" src=""></embed>
+        </div>
+    </div>
+
 
     <div class="btn-container">
-        <button>Заказать красную нить</button>
+        <button onClick="openFormModal()">Заказать красную нить</button>
     </div>
 
 </div>
