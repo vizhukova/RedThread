@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "description": "landing page",
+  "main": "gulpfile.js",
+  "authors": [
+    "nika <Product56>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/vizhukova/RedThread",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Swiper": "swiper#^3.3.1",
+    "jquery": "^3.1.0"
+  }
+}
