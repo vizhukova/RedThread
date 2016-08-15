@@ -13,14 +13,16 @@ $page-padding: 0 18%;
 @import url(https://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
 
 
-@import './slide1';
-@import './slide2';
-@import './slide3';
-@import './slide4';
-@import './slide5';
-@import './slide6';
-@import './slide7';
-@import './slide8';
+@import 'slide1';
+@import 'slide2';
+@import 'slide3';
+@import 'slide4';
+@import 'slide5';
+@import 'slide6';
+@import 'slide7';
+@import 'slide8';
+
+@import 'media_styles';
 
 html {
   font-size: 16px;
@@ -61,6 +63,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
+  cursor: default;
 
   & > * {
     display: inline-block;
@@ -129,6 +132,10 @@ body {
 
         ///TODO посчитать line-height в %
         line-height: $header-height;
+
+        &:hover {
+          color: $active-color;
+        }
 
         &:last-child {
           padding-right: 0;
@@ -392,347 +399,4 @@ button {
   }
 }
 
-@media screen and (max-device-width: 1520px) {
-  html {
-    font-size: 15px;
-  }
-  .header {
-    padding: 0 15px;
-  }
-
-  .slide1 {
-    margin: 0 15px;
-  }
-
-  .slide {
-    margin: 0 4rem;
-  }
-
-  .slide1 {
-
-    .right-block {
-      background-size: 100%;
-      padding: 3.6% 6%;
-      width: 30%;
-    }
-
-    .left-block {
-      width: 60%;
-      p, a {
-        padding-left: 20%;
-        width: 30%;
-      }
-      img {
-        top: 46%;
-      }
-    }
-  }
-}
-
-@media screen and (max-device-width: 1025px) {
-
-  .slide1 {
-    .left-block {
-      width: 52%;
-      p, a {
-        padding-left: 6%;
-        width: 55%;
-      }
-      img {
-        top: 62%;
-        height: 100%;
-      }
-    }
-    .right-block {
-      padding: 3.6% 1%;
-      width: 35%;
-    }
-  }
-
-}
-
-@media screen and (max-device-width: 925px) {
-
-  html {
-    font-size: 13px;
-  }
-  .slide1 {
-    .left-block {
-      img {
-        top: 63%;
-        height: 120%;
-        left: 0;
-      }
-    }
-  }
-
-}
-
-@media screen and (min-device-width: 801px) {
-  .desktop-page, .footer, img.background-node, div.header {
-    display: block;
-  }
-
-  .header-up {
-    display: none;
-  }
-
-}
-/*mobile version*/
-
-@media screen and (max-device-width: 800px) {
-
-  html {
-    font-size: 20px;
-  }
-
-  body {
-    background-image: url($res-url + 'slide1_background.png');
-    background-color: #0f141c;
-    background-size: 100%;
-    overflow: hidden;
-
-    &+.swiper-container {
-      overflow: hidden;
-      height: auto;
-    }
-
-  }
-
-  .swiper-container {
-    height: auto;
-    padding-top: 0;
-    margin-bottom: 1rem;
-
-    .slide {
-      margin: 0 1rem;
-
-    }
-  }
-
-  .desktop-page, .footer, img.background-node {
-    display: none;
-  }
-
-  .mobile {
-      display: block !important;
-    }
-
-  .header {
-    background-color: transparent;
-    height: initial;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    margin: 1rem;
-    padding: 0;
-    position: initial;
-
-    button {
-      width: 85%;
-      font-size: 0.7rem;
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
-      bottom: 2rem;
-    }
-
-
-    .phone, .phone p,.menu, .menu li {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .phone, .menu {
-      display: block;
-      text-align: center;
-    }
-
-    .menu {
-      font-size: 1rem;
-      z-index: 1;
-
-      li {
-        line-height: 50px !important;
-        z-index:1;
-
-        &:after {
-          border-bottom: solid 1px #f00035 !important;
-          left: 0 !important;
-          right: 0 !important;
-          width: 47%;
-          margin: auto;
-        }
-      }
-    }
-
-    .phone {
-      p.call {
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-
-      p {
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-      }
-
-      p:first-child {
-        padding-top: 2rem;
-      }
-    }
-
-    .label {
-      display: none;
-    }
-
-    .hand-pic {
-      position: absolute;
-      left: -38px;
-      bottom: 4.5rem;
-      height: 8rem;
-
-    }
-  }
-
-  .slide2 {
-    ul {
-      margin-left: 10px;
-    }
-
-    .icon-container {
-      .icon {
-        width: 50%;
-        min-width: 200px;
-        padding: 0.1rem 0;
-      }
-    }
-  }
-
-  .slide3 {
-    ul {
-      padding: 0;
-      width: 100%;
-    }
-    .quote {
-      margin: 2rem 0;
-    }
-
-    .btn-container {
-      button {
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-
-    .video-container {
-      top: -25%;
-    }
-  }
-
-  .slide4 {
-    .block {
-      width: 100%;
-
-      span {
-        font-size: 0.7rem;
-      }
-    }
-
-    .video-container {
-      iframe {
-        width: 100%;
-      }
-    }
-  }
-
-  .slide5 {
-     .btn-container {
-       button {
-        min-width: 100%;
-        width: 100%;
-      }
-     }
-  }
-
-  .slide6 {
-
-
-    .comment {
-      width: 25%;
-      min-width: 100%;
-    }
-
-    button {
-      min-width: 100%;
-      width: 100%;
-    }
-  }
-
-  .slide7 {
-    h1 {
-      margin: 1.5rem 0;
-    }
-
-    .btn-container {
-      button {
-        min-width: 100%;
-      }
-    }
-  }
-
-  .slide8 {
-    .form {
-      width: 80%;
-    }
-  }
-
-   .carousel {
-      width: 90%;
-     height: 100px;
-      margin-top: 3rem;
-
-      .arrow_left {
-        background-size: 70%;
-        background-position: left;
-      }
-
-      .arrow_right {
-        background-size: 70%;
-        background-position: right;
-      }
-    }
-}
-
-@media screen and (max-device-width: 450px) {
-  body {
-    background-size: inherit;
-  }
-  .slide8 {
-   .form {
-     width: 100%;
-     padding: 1rem 0;
-
-     h4 {
-       font-size: 1rem;
-     }
-
-     p {
-       font-size: 0.8rem;
-     }
-   }
-  }
-}
-
-@media screen and (max-device-width: 370px) {
-  .slide8 {
-   .form {
-
-   }
-  }
-}
 

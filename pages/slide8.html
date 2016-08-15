@@ -8,7 +8,7 @@
         <p>Посто заполните правильно форму</p>
         <p>и начните притягивать удачу прямо сейчас!</p>
 
-        <form method="post" action="http://localhost:63342/RedThread/app.php">
+        <form method="post" action="./php/index.php">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="text" name="surname" placeholder="Ваша фамилия" required>
             <input type="text" name="number" placeholder="Ваш номет телефона" required>
@@ -16,17 +16,19 @@
 
             <select name="city" required>
                 <option disabled selected value> Город </option>
-                <option value="">city1</option>
-                <option value="">city2</option>
+                <option value="city1">city1</option>
+                <option value="city2">city2</option>
             </select>
 
             <select name="delivery" required>
                 <option disabled selected value> Способ доставки  </option>
-                <option value="">delivery1</option>
-                <option value="">delivery2</option>
+                <option value="delivery1">delivery1</option>
+                <option value="delivery2">delivery2</option>
             </select>
 
             <button onClick="openFormModal()">Заказать Красную нить</button>
+
+             <input type="hidden" name="type" value="order">
         </form>
 
          <p class="license">

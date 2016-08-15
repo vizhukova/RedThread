@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
 
-    debugger
     var menu = $('.menu');
     var label = $('.header .label');
     var menuItems = $('.menu').find('li');
-    var iframeVideo = $('#iframe-video');
+    var iframeVideo = $('#iframeVideo');
+    var bigVideo = $('#bigVideo');
     var modalForm = $('#modalForm');
 
     //initialize swiper when document ready
@@ -66,11 +66,13 @@ $(document).ready(function () {
      });
 
     $( "#video-carousel .arrow_right" ).click(function(e) {
-      videoCarousel.next();
+        iframeVideo.attr('src', '');
+        videoCarousel.next();
     });
 
     $( "#video-carousel .arrow_left" ).click(function(e) {
-      videoCarousel.prev();
+        iframeVideo.attr('src', '');
+        videoCarousel.prev();
     });
 
      $( ".slider").click(function(e) {
@@ -84,10 +86,10 @@ $(document).ready(function () {
 
         var url = items[0].dataset.url;
 
-        iframeVideo.removeClass('hidden');
         iframeVideo.attr('src', url + '&autoplay=1');
         iframeVideo.width(width);
         iframeVideo.height(height);
+        iframeVideo.removeClass('hidden');
     }
 
     function onMovingToCenter(item) {
@@ -100,21 +102,33 @@ $(document).ready(function () {
     function onSlideChangeStart(swiper) {
         menuItems.removeClass('active');
         $( menuItems[swiper.activeIndex - 2]).addClass('active');
+        afterSlidePage();
+    }
+
+    function afterSlidePage() {
+        iframeVideo.attr('src', '');
+        bigVideo.attr('src', bigVideo.attr('src'));
     }
 
     label.click(function (e) {
         mySwiper.slideTo(1);
+        afterSlidePage();
     });
 
     menu.click(function (e) {
-        mySwiper.slideTo(e.target.dataset.num);
+       goToPage(e.target.dataset.num);
+    });
+
+    function goToPage(num) {
+         mySwiper.slideTo(num);
+         afterSlidePage();
 
         if(window.innerWidth <= 800) {
             $('.header').css('display', 'none');
             $('.header-up').removeClass('hidden');
             $('body').addClass('overflow-no');
         }
-    });
+    }
     /**
      * header functions
      */
@@ -156,6 +170,11 @@ $(document).ready(function () {
     $('#modalForm .form').click(function(e) {
         e.stopPropagation();
     });
+
+    $('.get-call').on('click', function() {
+        goToPage(7);
+    });
+
 });
 
 function openFormModal() {
@@ -167,4 +186,5 @@ function resizeIframe(obj) {
 //    debugger
 //obj.style.height = obj.contentWindow.innerWidth * 0.5625 + 'px';
 }
+
 
