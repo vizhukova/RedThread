@@ -17,27 +17,26 @@ var paths = {
 gulp.task('default', ['sass', 'watch', 'rigger']);
 
 gulp.task('rigger', function () {
-     gulp.src('index.html')
+     gulp.src('./pages/index.html')
         .pipe(rigger())
-        .pipe(gulp.dest('build/'));
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('sass', function(done) {
   gulp.src(['./scss/stylesheet.scss'])
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./css/'))
     .on('end', done);
 });
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
-  gulp.watch('index.html', ['rigger']);
   gulp.watch('pages/**.html', ['rigger']);
 });
 

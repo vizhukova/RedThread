@@ -55,7 +55,7 @@
     display: inline-block;
     width: 36%;
     box-sizing: border-box;
-    background-image: url("./../../res/slide1_background.png");
+    background-image: url($res-url + "slide1_background.png");
     background-repeat: no-repeat;
     background-size: 100%;
     vertical-align: top;

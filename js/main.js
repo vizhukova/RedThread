@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+    debugger
     var menu = $('.menu');
     var label = $('.header .label');
     var menuItems = $('.menu').find('li');
@@ -72,7 +73,7 @@ $(document).ready(function () {
       videoCarousel.prev();
     });
 
-     $( "#video-carousel").click(function(e) {
+     $( ".slider").click(function(e) {
          e.stopPropagation();
      });
 
@@ -159,6 +160,7 @@ $(document).ready(function () {
 
 function openFormModal() {
     $('#modalForm').removeClass('hidden');
+    window.scrollTo(0, 0);
 }
 
 function resizeIframe(obj) {
