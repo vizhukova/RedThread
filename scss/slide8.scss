@@ -35,7 +35,7 @@
         display: block;
       }
 
-      input, select {
+      input, select, textarea {
         border-radius: 5px;
         border: none;
         height: 2rem;
@@ -44,6 +44,10 @@
         margin-bottom: 0.5rem;
         background-color: #fff;
         width: 100%;
+      }
+
+      textarea {
+        height: inherit;
       }
 
       button {

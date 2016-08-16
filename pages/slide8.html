@@ -8,8 +8,8 @@
         <p>Посто заполните правильно форму</p>
         <p>и начните притягивать удачу прямо сейчас!</p>
 
-        <form method="post" action="./php/index.php">
-            <input type="text" name="name" placeholder="Ваше имя" required>
+        <form class="form">
+            <input type="text" name="name" placeholder="Ваше имя">
             <input type="text" name="surname" placeholder="Ваша фамилия" required>
             <input type="text" name="number" placeholder="Ваш номет телефона" required>
             <input type="email" name="email" placeholder="Ваш email " required>
@@ -26,7 +26,7 @@
                 <option value="delivery2">delivery2</option>
             </select>
 
-            <button onClick="openFormModal()">Заказать Красную нить</button>
+            <button>Заказать Красную нить</button>
 
              <input type="hidden" name="type" value="order">
         </form>

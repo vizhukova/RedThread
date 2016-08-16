@@ -161,19 +161,39 @@ $(document).ready(function () {
      * modal
      */
 
-    console.log( $('#modalForm .ground'),  $('#modalForm .form'))
-    $('#modalForm').click(function(e) {
-        $('#modalForm').addClass('hidden');
+    $('.modal').click(function(e) {
+        $('.modal').addClass('hidden');
         e.stopPropagation();
     });
 
-    $('#modalForm .form').click(function(e) {
+    $('.modal .form').click(function(e) {
         e.stopPropagation();
     });
 
     $('.get-call').on('click', function() {
         goToPage(7);
     });
+
+    $('.form').on('submit', function(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+        var data = $( this ).serialize();
+
+         $.ajax({
+            method: 'POST',
+            url: './../php/index.php',
+            data: data,
+            success: function(response){
+                debugger
+            },
+            error: function(response){
+                debugger
+                //JSON.parse(response.responseText) = ==array
+            }
+
+        });
+    })
 
 });
 
@@ -182,9 +202,15 @@ function openFormModal() {
     window.scrollTo(0, 0);
 }
 
+function openFormConsultation() {
+    $('#modalFormConsultation').removeClass('hidden');
+    window.scrollTo(0, 0);
+}
+
 function resizeIframe(obj) {
 //    debugger
 //obj.style.height = obj.contentWindow.innerWidth * 0.5625 + 'px';
 }
+
 
 

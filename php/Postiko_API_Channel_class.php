@@ -1,4 +1,4 @@
-<?
+<?php
 
 class PostikoApiChannel{
 	
@@ -337,6 +337,7 @@ class PostikoApiChannel{
 			//$this->debug(2,true);
 			$this->debug('Переданы некорректные данные.');
 		endif;
+		$_RETURN = 'all';
 		return $this->returnResult($_RETURN);	
 	}
 	
