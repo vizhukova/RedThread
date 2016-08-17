@@ -31,6 +31,13 @@
       box-sizing: border-box;
       padding: 1rem 0;
 
+      &>* {
+        &.error {
+          border: solid 3px $active-color;
+        }
+      }
+
+
       input, select, label {
         display: block;
       }

@@ -49,6 +49,10 @@ body {
   padding-top: $header-height;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
+
+  .swiper-slide {
+    height: 100%;
+  }
 }
 
 .header {
@@ -224,14 +228,28 @@ body {
   }
 }
 
-img.background-node {
+#backgroundNode {
   position: absolute;
-  bottom: $footer-height - 13px;
+  bottom: $footer-height + 6px;
   left: 0;
   right: 0;
   margin: auto;
   width: 40%;
-  height: auto;
+  height: 20px;
+  z-index: 2;
+
+  .node {
+    background-image: url($res-url + 'node.png');
+    float: left;
+    width: calc(100% / 7);
+    height: inherit;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    &.active {
+      background-image: url($res-url + 'node_active.png');
+    }
+  }
 }
 
 .footer {
@@ -268,7 +286,8 @@ img.background-node {
 
 .slide {
   margin: $page-padding;
-  overflow: hidden;
+  //overflow: hidden;
+  position: relative;
 }
 
 h1 {
@@ -368,6 +387,18 @@ button {
 
 .overflow-no {
   overflow: initial;
+}
+
+div.hand {
+  position: absolute;
+  bottom: 0;
+  left: 18%;
+  right: 0;
+  height: 75%;
+  background-image: url($res-url + 'hand.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 80px 74px;
 }
 
 .modal {

@@ -7,6 +7,7 @@ $(document).ready(function () {
     var iframeVideo = $('#iframeVideo');
     var bigVideo = $('#bigVideo');
     var modalForm = $('#modalForm');
+    var backgroundNode = $('#backgroundNode');
 
     //initialize swiper when document ready
     var mySwiper = new Swiper ('.swiper-container', {
@@ -100,10 +101,31 @@ $(document).ready(function () {
      * swiper functions
      */
     function onSlideChangeStart(swiper) {
+        console.log(swiper.activeIndex)
+        if(swiper.activeIndex == 1) { $('#hand').removeClass('hidden'); console.log(1) }
+        else { $('#hand').addClass('hidden'); console.log(2) }
+
         menuItems.removeClass('active');
         $( menuItems[swiper.activeIndex - 2]).addClass('active');
+
+        backgroundNode.children().removeClass('active');
+        $( backgroundNode.children()[swiper.activeIndex - 1]).addClass('active');
+
+        debugger
+        if(window.innerWidth <= 800) {
+            if(swiper.activeIndex == 1) {
+                var nextPage = swiper.previousIndex > swiper.activeIndex ? swiper.activeIndex -1 : swiper.previousIndex + 1;
+                goToPage(nextPage);
+            }
+        }
+
         afterSlidePage();
     }
+
+    backgroundNode.on('click', function(e) {
+        var num = e.target.dataset.num;
+        goToPage(num);
+    });
 
     function afterSlidePage() {
         iframeVideo.attr('src', '');
@@ -179,6 +201,7 @@ $(document).ready(function () {
         e.preventDefault();
         e.stopPropagation();
         var data = $( this ).serialize();
+        var form = $(e.target);
 
          $.ajax({
             method: 'POST',
@@ -186,31 +209,31 @@ $(document).ready(function () {
             data: data,
             success: function(response){
                 debugger
+                form.children().removeClass('error');
             },
             error: function(response){
                 debugger
-                //JSON.parse(response.responseText) = ==array
+                var arrayOfErrors = JSON.parse(response.responseText);
+                for(var i = 0; i < arrayOfErrors.length; i++) {
+                    form.find('#' + arrayOfErrors[i]).addClass('error');
+                }
             }
 
         });
-    })
+    });
+
+    $('.open-order-modal').on('click', function(e) {
+         $('#modalForm').removeClass('hidden');
+          window.scrollTo(0, 0);
+    });
+
+    $('.open-consultation-modal').on('click', function(e) {
+         $('#modalFormConsultation').removeClass('hidden');
+          window.scrollTo(0, 0);
+    });
 
 });
 
-function openFormModal() {
-    $('#modalForm').removeClass('hidden');
-    window.scrollTo(0, 0);
-}
-
-function openFormConsultation() {
-    $('#modalFormConsultation').removeClass('hidden');
-    window.scrollTo(0, 0);
-}
-
-function resizeIframe(obj) {
-//    debugger
-//obj.style.height = obj.contentWindow.innerWidth * 0.5625 + 'px';
-}
 
 
 
