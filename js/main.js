@@ -30,13 +30,15 @@ $(document).ready(function () {
       separation: 50
     });
 
+    var separationVideo = window.innerWidth <= 320 ? 50 : 100;
+
     var videoCarousel = $("#video-carousel").waterwheelCarousel({
       opacityMultiplier: 0.5,
       flankingItems: 3,
       forcedImageWidth: forcedImageWidth,
       forcedImageHeight: 'auto',
       separationMultiplier: 0.5,
-      separation: 100,
+      separation: separationVideo,
       clickedCenter: onClickedCenter,
       movingToCenter: onMovingToCenter
     });
@@ -111,12 +113,16 @@ $(document).ready(function () {
         backgroundNode.children().removeClass('active');
         $( backgroundNode.children()[swiper.activeIndex - 1]).addClass('active');
 
-        debugger
-        if(window.innerWidth <= 800) {
-            if(swiper.activeIndex == 1) {
-                var nextPage = swiper.previousIndex > swiper.activeIndex ? swiper.activeIndex -1 : swiper.previousIndex + 1;
-                goToPage(nextPage);
+        if(swiper.activeIndex == 1 || swiper.activeIndex == 8) {
+
+            $('#hand').removeClass('hidden');
+
+            if(window.innerWidth <= 800) {
+               goToSlide1Mobile();
             }
+
+        } else {
+            $('#hand').addClass('hidden');
         }
 
         afterSlidePage();
@@ -155,14 +161,18 @@ $(document).ready(function () {
      * header functions
      */
 
-    $('.header-up .label').click(function(e) {
+    function goToSlide1Mobile(e) {
          $('.header').css('display', 'block');
          $('.header-up').addClass('hidden');
          $('body').removeClass('overflow-no');
 
-        mySwiper.slideTo(1);
+         if(mySwiper) mySwiper.slideTo(1);
 
-         e.stopPropagation();
+         if(e) e.stopPropagation();
+    }
+
+    $('.header-up__label').click(function(e) {
+       goToSlide1Mobile(e);
     });
 
     $('.header-up').click(function(e) {
@@ -208,11 +218,10 @@ $(document).ready(function () {
             url: './../php/index.php',
             data: data,
             success: function(response){
-                debugger
                 form.children().removeClass('error');
+                $('.modal').addClass('hidden');
             },
             error: function(response){
-                debugger
                 var arrayOfErrors = JSON.parse(response.responseText);
                 for(var i = 0; i < arrayOfErrors.length; i++) {
                     form.find('#' + arrayOfErrors[i]).addClass('error');
