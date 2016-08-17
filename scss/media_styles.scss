@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 1520px) {
+@media (max-width: 1520px) {
   html {
     font-size: 15px;
   }
@@ -35,7 +35,11 @@
   }
 }
 
-@media screen and (max-device-width: 1025px) {
+@media (max-width: 1025px) {
+
+  .slide  {
+    margin: 0 25px;
+  }
 
   .slide1 {
     .left-block {
@@ -57,7 +61,7 @@
 
 }
 
-@media screen and (max-device-width: 925px) {
+@media (max-width: 925px) {
 
   html {
     font-size: 13px;
@@ -74,7 +78,7 @@
 
 }
 
-@media screen and (min-device-width: 801px) {
+@media (min-width: 812px) {
   .desktop-page, img.background-node, div.header {
     display: block;
   }
@@ -86,7 +90,7 @@
 }
 /*mobile version*/
 
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
 
   html {
     font-size: 20px;
@@ -177,10 +181,23 @@
       text-align: center;
     }
 
+    .phone {
+      //position: absolute;
+      //top: 0;
+      //bottom: 0;
+      //margin: auto;
+      //height: 70%;
+    }
+
     .menu {
       font-size: 1rem;
       z-index: 1;
-      margin-top: 105px;
+      //padding-top: 105px; //TODO не помню зачем нужна была
+      //position: absolute;
+      //top: 0;
+      //bottom: 0;
+      //margin: auto;
+      //height: 58%;
 
       li {
         line-height: 50px !important;
@@ -197,6 +214,7 @@
     }
 
     .phone {
+      padding-top: 50px;
       p.call {
         position: absolute;
         top: 72px;
@@ -221,16 +239,12 @@
 
     .hand-pic {
       position: absolute;
-      left: -38px;
+      //left: -38px;
       bottom: 4.5rem;
-      height: 8rem;
+      //height: 8rem;
+      left: -73px;
+      height: 15rem;
 
-    }
-  }
-
-  .phone {
-    p:not(:last-child) {
-      display: none;
     }
   }
 
@@ -357,9 +371,18 @@
     }
 }
 
-@media screen and (max-device-width: 450px) {
+@media screen and (max-width: 450px) {
   body {
     background-size: inherit;
+  }
+
+  .header {
+     .hand-pic {
+      position: absolute;
+      left: -55px;
+      bottom: 25%;
+      height: 8rem;
+    }
   }
 
   .header-up {

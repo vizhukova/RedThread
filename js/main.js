@@ -103,17 +103,23 @@ $(document).ready(function () {
      * swiper functions
      */
     function onSlideChangeStart(swiper) {
-        console.log(swiper.activeIndex)
-        if(swiper.activeIndex == 1) { $('#hand').removeClass('hidden'); console.log(1) }
+        
+        var index =  swiper.activeIndex;
+        
+        index = index === 0 ? 7 : index;
+        index = index === 8 ? 1 : index;
+        
+        console.log(index)
+        if(index == 1) { $('#hand').removeClass('hidden'); console.log(1) }
         else { $('#hand').addClass('hidden'); console.log(2) }
 
         menuItems.removeClass('active');
-        $( menuItems[swiper.activeIndex - 2]).addClass('active');
+        $( menuItems[index - 2]).addClass('active');
 
         backgroundNode.children().removeClass('active');
-        $( backgroundNode.children()[swiper.activeIndex - 1]).addClass('active');
+        $( backgroundNode.children()[index - 1]).addClass('active');
 
-        if(swiper.activeIndex == 1 || swiper.activeIndex == 8) {
+        if(index == 1 || index == 8) {
 
             $('#hand').removeClass('hidden');
 

@@ -3,6 +3,7 @@ $active-color: #f00035;
 $header-height: 65px;
 $footer-height: 45px;
 $page-padding: 0 18%;
+$max-body-width: 0 18%;
 
 @font-face {
   font-family: Chickpeas;
@@ -37,6 +38,15 @@ body {
   background-size: 100%;
 }
 
+.content-width {
+  display: block;
+  max-width: 1000px;
+  position: relative;
+  clear: both;
+  margin: auto;
+  height: 100%;
+}
+
 .mobile {
   display: none !important;
 }
@@ -61,16 +71,18 @@ body {
   -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
-  padding: $page-padding;
+  //padding: $page-padding;
   color: #fff;
   position: absolute;
   left: 0;
   right: 0;
   cursor: default;
 
-  & > * {
-    display: inline-block;
-    vertical-align: top;
+  .content-width {
+    & > * {
+      display: inline-block;
+      vertical-align: top;
+    }
   }
 
   .btn-container {
@@ -130,7 +142,7 @@ body {
 
       li {
         display: inline-block;
-        padding-right: 5%;
+        padding-right: 3%;
         vertical-align: middle;
         position: relative;
 
@@ -175,7 +187,7 @@ body {
     font-weight: 400;
     text-align: center;
     font-size: 1.1rem;
-    padding: 0.2rem 0;
+    padding: 0.2rem 5px 0.2rem 0;
     p {
       margin: 0;
 
@@ -230,20 +242,46 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  width: 40%;
-  height: 20px;
   z-index: 2;
+  background: url($res-url + 'nodes.png') no-repeat center center;
+  width: 665px;
+  height: 65px;
+  background-size: 86%;
 
   .node {
-    background-image: url($res-url + 'node.png');
+    width: calc(86%/7);
+    height: 50px;
     float: left;
-    width: calc(100% / 7);
-    height: inherit;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+
+    &:first-child {
+      margin-left: 7%;
+    }
 
     &.active {
-      background-image: url($res-url + 'node_active.png');
+      background: url("./../res/cloud.png") no-repeat center center;
+      background-size: 66%;
+      height: 57px;
+
+
+      &:nth-child(1) {
+        background-position: 19px 10px;
+      }
+
+      &:nth-child(2) {
+        background-position: 13px -3px;
+      }
+
+      &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+        background-position: 15px 8px;
+      }
+
+      &:nth-child(6),  &:nth-child(7) {
+        background-position: 11px 7px;
+      }
+
+      &.rotated {
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -257,7 +295,7 @@ body {
   right: 0;
   color: white;
   font-family: OpenSans sans-serif;
-  font-size: 11px;
+  font-size: 9px;
   text-align: center;
   z-index: 10;
 
@@ -281,8 +319,9 @@ body {
 }
 
 .slide {
-  margin: $page-padding;
+  //margin: $page-padding;
   //overflow: hidden;
+  @extend .content-width;
   position: relative;
 }
 
@@ -394,7 +433,7 @@ div.hand {
   background-image: url("./../res/hand.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 80px 94px;
+  background-position: 20% 94px;
 }
 
 .modal {

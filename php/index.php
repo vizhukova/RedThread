@@ -59,12 +59,22 @@ if ($_POST) {
              $_API_CHANNEL_OBJ = new PostikoApiChannel($login, $pass);
              $_ARRAY = $_API_CHANNEL_OBJ->sendSMS($_RECIPIENTS,$_TEXT);
 
+             //Добавление посылки в Postiko
+
+              // $rand = rand(1000,  getrandmax());
+              // $_PACKAGES_TO_ADD = array(
+              // $rand=>array('desc'=>"Заказ красной нити - $name $surname", 'client_phone'=>$number, 'client_email'=>$email)
+              // );
+              // $_ARRAY = $_API_CHANNEL_OBJ->addPackages($_PACKAGES_TO_ADD);
+              // $_API_CHANNEL_OBJ->debug($_ARRAY,true); 
+
+
               //Отправляем email заказчику
 
               $subject = 'Заказ красной нити';
               $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
 
-              mail($mail, $subject, $_TEXT, $from);
+              mail($email, $subject, $_TEXT, $from);
 
 
               // //Отправляем email админу
@@ -130,7 +140,7 @@ if ($_POST) {
               $subject = 'Заказ красной нити';
               $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
 
-              mail($mail, $subject, $_TEXT, $from);
+              mail($email, $subject, $_TEXT, $from);
 
 
               // //Отправляем email админу
