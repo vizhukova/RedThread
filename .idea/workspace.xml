@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554e93bc-2760-47ae-be83-0cf4ba2e378f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/node.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/nodes.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/node_active.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide1.html" afterPath="$PROJECT_DIR$/pages/slide1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide3.html" afterPath="$PROJECT_DIR$/pages/slide3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide4.html" afterPath="$PROJECT_DIR$/pages/slide4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide5.html" afterPath="$PROJECT_DIR$/pages/slide5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide6.html" afterPath="$PROJECT_DIR$/pages/slide6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide7.html" afterPath="$PROJECT_DIR$/pages/slide7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide8.html" afterPath="$PROJECT_DIR$/pages/slide8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/slide9.html" afterPath="$PROJECT_DIR$/pages/slide9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/media_styles.scss" afterPath="$PROJECT_DIR$/scss/media_styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/slide1.scss" afterPath="$PROJECT_DIR$/scss/slide1.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/slide8.scss" afterPath="$PROJECT_DIR$/scss/slide8.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/stylesheet.scss" afterPath="$PROJECT_DIR$/scss/stylesheet.scss" />
     </list>
     <ignored path="RedThread.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -599,13 +585,20 @@
       <option name="project" value="LOCAL" />
       <updated>1470268961931</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="home changes">
+      <created>1471408273133</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1471408273133</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30139104" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39103556" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -620,7 +613,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40693197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -640,7 +632,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="5th slide" />
-    <option name="LAST_COMMIT_MESSAGE" value="5th slide" />
+    <MESSAGE value="home changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="home changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
