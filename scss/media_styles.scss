@@ -108,6 +108,13 @@
 
   }
 
+  .hand-pic {
+    position: absolute;
+    left: -73px;
+    bottom: 0%;
+    height: 11rem;
+  }
+
   .header-up {
     display: block;
   }
@@ -379,13 +386,11 @@
     background-size: inherit;
   }
 
-  .header {
-     .hand-pic {
-      position: absolute;
-      left: -55px;
-      bottom: 25%;
-      height: 8rem;
-    }
+  .hand-pic {
+    position: absolute;
+    left: -60px;
+    bottom: 0%;
+    height: 8rem;
   }
 
   .header-up {
