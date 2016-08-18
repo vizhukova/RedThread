@@ -4,6 +4,126 @@
 
 .slide1 {
 
+  .mobile {
+    text-align: center;
+
+    .label {
+      background-color: $active-color;
+      width: 22%;
+      height: 110%;
+      border-radius: 0 0 5px 5px;
+      text-align: center;
+      position: relative;
+      float: left;
+      overflow: hidden;
+      -webkit-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.75);
+      height: 60px;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+
+      .content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 75%;
+        padding: 3%;
+
+        span:first-child {
+          font-family: Chickpeas;
+          font-weight: 600;
+          font-size: 2.1rem;
+          display: block;
+          line-height: 17px;
+          margin-top: 6px;
+        }
+        span:last-child {
+          width: 299px;
+          font-family: OpenSans;
+          font-size: 0.44rem;
+        }
+      }
+    }
+
+    .phone {
+    color: #fafafa;
+    font-family: OpenSans;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.2rem 5px 0.2rem 0;
+    p {
+      margin: 0;
+
+      &:first-child {
+        color: #ff1856;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: underline;
+        line-height: 3rem;
+      }
+    }
+  }
+
+     .menu {
+      display: inline-block;
+      width: 60%;
+      font-size: 1.1rem;
+      z-index: 1;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0;
+
+        li {
+            display: block;
+            vertical-align: middle;
+            position: relative;
+            line-height: 45px !important;
+            font-size: 16px;
+
+          ///TODO посчитать line-height в %
+          line-height: $header-height;
+
+          &:hover {
+            color: $active-color;
+            border-bottom: solid 1px $active-color;
+          }
+
+          &:last-child {
+            padding-right: 0;
+
+            &.active {
+              &:after {
+                right: 0;
+              }
+            }
+          }
+
+          &.active {
+            color: $active-color;
+            &:after {
+              content: "";
+              border-bottom: solid 3px #f00035;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 23%;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
   .left-block {
     display: inline-block;
     width: 45%;

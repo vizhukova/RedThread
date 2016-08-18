@@ -7,11 +7,11 @@
   }
 
   .slide1 {
-    margin: 0 15px;
+    //margin: 0 15px;
   }
 
   .slide {
-    margin: 0 4rem;
+    //margin: 0 4rem;
   }
 
   .slide1 {
@@ -83,7 +83,7 @@
     display: block;
   }
 
-  .header-up {
+  div.header-up {
     display: none;
   }
 
@@ -100,13 +100,16 @@
     background-image: url($res-url + 'slide1_background.png');
     background-color: #0f141c;
     background-size: 100%;
-    overflow: hidden;
 
     &+.swiper-container {
       overflow: hidden;
       height: auto;
     }
 
+  }
+
+  .header-up {
+    display: block;
   }
 
   .swiper-container {
