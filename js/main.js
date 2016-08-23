@@ -106,13 +106,13 @@ $(document).ready(function () {
     function onSlideChangeStart(swiper) {
         
         var index =  swiper.activeIndex;
-        
+
         index = index === 0 ? 7 : index;
         index = index === 8 ? 1 : index;
-        
+
         console.log(index)
-        if(index == 1) { $('#hand').removeClass('hidden'); console.log(1) }
-        else { $('#hand').addClass('hidden'); console.log(2) }
+        if(index == 1) { $('#hand').removeClass('hidden');}
+        else { $('#hand').addClass('hidden');}
 
         menuItems.removeClass('active');
         $( menuItems[index - 2]).addClass('active');
@@ -123,10 +123,6 @@ $(document).ready(function () {
         if(index == 1 || index == 8) {
 
             $('#hand').removeClass('hidden');
-
-            if(window.innerWidth <= 800) {
-               goToSlide1Mobile();
-            }
 
         } else {
             $('#hand').addClass('hidden');

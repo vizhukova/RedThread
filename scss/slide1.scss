@@ -7,6 +7,12 @@
   .mobile {
     text-align: center;
 
+    button {
+      width: 100%;
+      margin-top: 15%;
+      font-size: 0.75rem;
+    }
+
     .label {
       background-color: $active-color;
       width: 22%;
