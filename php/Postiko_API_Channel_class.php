@@ -9,12 +9,14 @@ class PostikoApiChannel{
 		'pass'=>'trim',
 		'method'=>'trim',
 		'packages'=>'json_encode',
+		'client'=>'json_encode',
 		'recipients'=>'json_encode',
 		'text_message'=>'trim',
 		'sender'=>'trim',
 		'recipient'=>'trim',
 		'key'=>'trim',
 		'status_type'=>'trim',
+		'decription_addition'=>'intval',
 	);
 	
 	private $_LOGIN = '';
@@ -47,6 +49,8 @@ class PostikoApiChannel{
 		'wait'=>'Повторите запрос чуть позже.',
 		'bad_signature'=>'Указано некорректное имя отправителя.',	
 		'empty_array_recipients'=>'Массив получателей пустой',
+		'incoorect_require_client_params'=>'В массиве клиента отсутствуют или некорректны обязательные параметры.',
+		'operation_error'=>'Ошибка операции',
 	);
 	
 	private $_SUCCESS = array();
@@ -56,6 +60,7 @@ class PostikoApiChannel{
 	public function PostikoApiChannel($_LOGIN='',$_PASS=''){
 		if(!empty($_LOGIN)) $this->_LOGIN = $_LOGIN;
 		if(!empty($_PASS)) $this->_PASS = $_PASS;
+		self::$_POSTIKO_API_ADDRESS = (($_SERVER['HTTP_HOST']=='postiko0.ru') ? str_replace('postiko.ru','postiko0.ru',self::$_POSTIKO_API_ADDRESS) : self::$_POSTIKO_API_ADDRESS);
 	}
 	
 	
@@ -95,6 +100,7 @@ class PostikoApiChannel{
 	}
 	
 	private function curlRequest($_PARAMS_ARRAY=array(),$_METHOD='post'){
+		//$this->debug($_PARAMS_ARRAY,true);
 		if(is_array($_PARAMS_ARRAY) && count($_PARAMS_ARRAY)>0):
 			
 			$_PARAMS_STRING = $this->preparationParamsToCurlRequest($_PARAMS_ARRAY);
@@ -337,7 +343,6 @@ class PostikoApiChannel{
 			//$this->debug(2,true);
 			$this->debug('Переданы некорректные данные.');
 		endif;
-		$_RETURN = 'all';
 		return $this->returnResult($_RETURN);	
 	}
 	
@@ -353,6 +358,22 @@ class PostikoApiChannel{
 		endif;
 		return $this->returnResult($_RETURN);
 		
+	}
+	
+	private function checkClientArray($_CLIENT_DATA){
+		$_check = true;
+		if(!isset($_CLIENT_DATA['phone_number']) || empty($_CLIENT_DATA['phone_number'])){ $_check = false; }
+		if(!isset($_CLIENT_DATA['name']) || empty($_CLIENT_DATA['name'])){ $_check = false; }
+		return $_check;	
+	}
+	
+	public function addClient($_CLIENT_DATA=array(),$_DESCRIPTION_ADDITION=false){
+		if($this->checkClientArray($_CLIENT_DATA)):
+			$this->_SUCCESS = $this->curlRequest(array('login'=>$this->_LOGIN,'pass'=>$this->_PASS,'method'=>'add_client','client'=>$_CLIENT_DATA,'decription_addition'=>(($_DESCRIPTION_ADDITION==true) ? 1 : 0)));
+		else:
+			$this->_MESSAGES[] = $this->_ARR_MESSAGES_API_RESPONSE['incoorect_require_client_params'];
+		endif;
+		return $this->returnResult($_RETURN);		
 	}
 }
 

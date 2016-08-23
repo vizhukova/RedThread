@@ -1,19 +1,12 @@
 <?php
 
 require_once("./Postiko_API_Channel_class.php");
+require_once("./config.php");
+
 
 if ($_POST) {
+
     $type = $_POST["type"];
-
-    $login = 'creatorlider@gmail.com';
-    $pass = 'gfdTO048303';
-
-    $admin_email = 'veronikazhukova9@gmail.com';
-    $admin_num = array(
-        '+38 (050) 875 - 81 79'
-    );
-
-    $sendObj = new stdClass;
 
     function answerBadRequest($data) {
 
@@ -55,26 +48,34 @@ if ($_POST) {
                 $number
                 );
 
+
              $_TEXT = "Поздравляем, $name $surname! Ваш заказ на красную нить принят.";    
              $_API_CHANNEL_OBJ = new PostikoApiChannel($login, $pass);
              $_ARRAY = $_API_CHANNEL_OBJ->sendSMS($_RECIPIENTS,$_TEXT);
+             // $_API_CHANNEL_OBJ->debug($_ARRAY,true);
 
-             //Добавление посылки в Postiko
 
-              // $rand = rand(1000,  getrandmax());
-              // $_PACKAGES_TO_ADD = array(
-              // $rand=>array('desc'=>"Заказ красной нити - $name $surname", 'client_phone'=>$number, 'client_email'=>$email)
-              // );
-              // $_ARRAY = $_API_CHANNEL_OBJ->addPackages($_PACKAGES_TO_ADD);
-              // $_API_CHANNEL_OBJ->debug($_ARRAY,true); 
+             //Добавление карточки клиента в Postiko
+              $_client_array = array(
+              'phone_number' => $number,
+              'name'=>$name,
+              'last_name'=>$surname,
+              'country'=>'Россия',
+              'city'=>$city,
+              'description'=>"Тип: 'Заказ', Тип доставки: $delivery",
+              'email'=>$email
+              );
+
+              $_ARRAY = $_API_CHANNEL_OBJ->addClient($_client_array,true);
+              // $_API_CHANNEL_OBJ->debug($_ARRAY,true);
 
 
               //Отправляем email заказчику
 
               $subject = 'Заказ красной нити';
-              $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
+              // $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
 
-              mail($email, $subject, $_TEXT, $from);
+              mail($email, $subject, $_TEXT);
 
 
               // //Отправляем email админу
@@ -135,12 +136,26 @@ if ($_POST) {
             $_API_CHANNEL_OBJ = new PostikoApiChannel($login, $pass);
             $_ARRAY = $_API_CHANNEL_OBJ->sendSMS($_RECIPIENTS,$_TEXT);
 
-              // //Отправляем email заказчику
+
+            //Добавление карточки клиента в Postiko
+            $_client_array = array(
+            'phone_number' => $number,
+            'name'=>$name,
+            'last_name'=>$surname,
+            'country'=>'Россия',
+            'description'=>"Тип: 'Консультация', Комментарий клиента: $comment",
+            'email'=>$email
+            );
+
+            $_ARRAY = $_API_CHANNEL_OBJ->addClient($_client_array,true);
+
+
+              //Отправляем email заказчику
 
               $subject = 'Заказ красной нити';
-              $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
+              // $from = "From: FirstName LastName <SomeEmailAddress@Domain.com>";
 
-              mail($email, $subject, $_TEXT, $from);
+              mail($email, $subject, $_TEXT);
 
 
               // //Отправляем email админу
