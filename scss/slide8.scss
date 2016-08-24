@@ -65,6 +65,9 @@
 
     p.license {
       font-size: 0.7rem;
+      a {
+        text-decoration: underline;
+      }
       span {
         display: block;
         &:last-child {

@@ -46,7 +46,7 @@
       width: 52%;
       p, a {
         padding-left: 6%;
-        width: 55%;
+        width: 60%;
       }
       img {
         top: 62%;
@@ -86,6 +86,10 @@
   div.header-up {
     display: none;
   }
+
+  //#hand {
+  //  background-position: 0% 94px;
+  //}
 
 }
 /*mobile version*/
@@ -136,8 +140,8 @@
   }
 
   .mobile {
-      display: block !important;
-    }
+    display: block !important;
+  }
 
   .header {
     background-color: transparent;
@@ -212,6 +216,19 @@
       li {
         line-height: 50px !important;
         z-index:1;
+
+        &:hover {
+          color: #fff !important;
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            height: 1px;
+            background: #fff;
+          }
+        }
 
         &:after {
           border-bottom: solid 1px #f00035 !important;
@@ -304,7 +321,7 @@
 
     .video-container {
       iframe {
-        width: 100%;
+        width: auto;
       }
     }
   }
@@ -365,7 +382,7 @@
   }
 
    .carousel {
-      width: 90%;
+     min-width: 90%;
      height: 100px;
       margin-top: 3rem;
 
