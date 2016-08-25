@@ -443,6 +443,9 @@ div.hand {
 
     -webkit-transition: all linear 0.5s;
     transition: all linear 0.5s;
+    position: absolute;
+    top: 0;
+    width: 100%;
 
   .ground {
     position: fixed;
@@ -456,15 +459,18 @@ div.hand {
   }
 
   .slide8 {
+    //color: #fff;
+    //position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    //z-index: 12;
+    //margin: auto;
+    //margin-top: 5%;
     color: #fff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 12;
-    margin: auto;
-    margin-top: 5%;
+    margin: 5% auto;
   }
 }
 
