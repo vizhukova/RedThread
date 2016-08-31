@@ -17,18 +17,19 @@
             </div>
         </div>
 
-         <div class="phone">
-            <p>8 (812) 215 66 66</p>
-            <p>8 (905) 215 66 66</p>
-            <p class="call get-call">Заказать звонок</p>
-        </div>
+         <!--<div class="phone">-->
+            <!--<p>(812) 983-13-03</p>-->
+            <!--<p>(905) 223-13-03</p>-->
+            <!--<p class="call get-call">Заказать звонок</p>-->
+        <!--</div>-->
        <div class="menu">
             <ul>
-                <li data-num="2">Применения</li>
-                <li data-num="3">Свойства нити</li>
-                <li data-num="4">Наличие</li>
-                <li data-num="5">Доставка</li>
-                <li data-num="6">Контакты</li>
+                <li data-num="2">Описание</li>
+                <li data-num="3">Свойства</li>
+                <li data-num="4">Знаменитости</li>
+                <li data-num="5">Доставка и оплата</li>
+                <li data-num="6">Заказать</li>
+                <li data-num="7">Контакты</li>
             </ul>
        </div>
 
@@ -50,11 +51,12 @@
         <span class="header-up__label">Красная нить</span>
          <div class="menu hidden">
               <ul>
-                <li data-num="2">Применения</li>
-                <li data-num="3">Свойства нити</li>
-                <li data-num="4">Наличие</li>
-                <li data-num="5">Доставка</li>
-                <li data-num="6">Контакты</li>
+                <li data-num="2">Описание</li>
+                <li data-num="3">Свойства</li>
+                <li data-num="4">Знаменитости</li>
+                <li data-num="5">Доставка и оплата</li>
+                <li data-num="6">Заказать</li>
+                <li data-num="7">Контакты</li>
             </ul>
     </div>
         </div>
@@ -78,17 +80,18 @@
             
                      <div class="phone">
                         <p class="call get-call">Заказать звонок</p>
-                        <p>8 (812) 215 66 66</p>
-                        <p>8 (905) 215 66 66</p>
+                        <p>(812) 983 - 13 - 03</p>
+                        <p>(905) 223 - 13 - 03</p>
                     </div>
             
                      <div class="menu">
                         <ul>
-                            <li data-num="2">Применения</li>
-                            <li data-num="3">Свойства нити</li>
-                            <li data-num="4">Наличие</li>
-                            <li data-num="5">Доставка</li>
-                            <li data-num="6">Контакты</li>
+                            <li data-num="2">Описание</li>
+                            <li data-num="3">Свойства</li>
+                            <li data-num="4">Знаменитости</li>
+                            <li data-num="5">Доставка и оплата</li>
+                            <li data-num="6">Заказать</li>
+                            <li data-num="7">Контакты</li>
                         </ul>
                    </div>
             
@@ -193,6 +196,8 @@
                     <span>(Овидий)</span>
                 </p>
             
+                <h3>Видео о Красной Нити</h3>
+            
                 <div class="video">
                       <div id="video-carousel" class="carousel slider">
                         <img src="https://i.ytimg.com/vi/p_ttqv_ZU2Y/default.jpg" data-url="https://www.youtube.com/embed/p_ttqv_ZU2Y?rel=0">
@@ -278,6 +283,13 @@
             
             </div>
         </div>
+         <div class="swiper-slide">
+            <div class="slide slide10">
+            
+               <p class="content">текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</p>
+            
+            </div>
+        </div>
         <div class="swiper-slide">
             <div class="slide slide6">
             
@@ -291,13 +303,13 @@
                 <!--<div class="slider" style="background: black;height: 166px;">-->
             
                     <div id="carousel" class="carousel slider">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
-                        <img src="./res/book1.png" alt="">
+                        <img data-num="0" src="./res/book1.png" alt="">
+                        <img data-num="1" src="./res/book1.png" alt="">
+                        <img data-num="2" src="./res/book1.png" alt="">
+                        <img data-num="0" src="./res/book1.png" alt="">
+                        <img data-num="1" src="./res/book1.png" alt="">
+                        <img data-num="2" src="./res/book1.png" alt="">
+                        <img data-num="0" src="./res/book1.png" alt="">
                         <div class="arrow arrow_left active"></div>
                         <div class="arrow arrow_right active"></div>
                     </div>
@@ -313,7 +325,7 @@
                         Материал: <span>Шерсть.</span></br>
                         В комлекте: <span>Молитва и правила использования.</span></br>
                         Страна-производитель: <span>Израиль.</span></br>
-                        Цена: <span class="price">1 шт = 290 руб.</span>
+                        Цена: <span class="price"><span id="namePrice"></span> = <span id="price"></span></span>
                     </p>
                 </div>
             
@@ -331,8 +343,8 @@
                 <p>Вы можете связаться с нами для получения полной консультации</p>
                 <p>по нити оплате и доставке</p>
                 <p>а так же написав нам или позвонить по номерам:</p>
-                <p>8 (812) 215 66 66</p>
-                <p>8 (905) 215 66 66</p>
+                <p>(812) 983 - 13 - 03</p>
+                <p>(905) 223 - 13 - 03</p>
             
                 <div class="btn-container">
                     <button class="open-consultation-modal">Заказать звонок</button>
@@ -383,8 +395,8 @@
 
     <div class="footer mobile">
         <div class="content">
-            <p>Адрес: Санкт-Петербург Невский 34 а.</p>
-            <p>Все права защищены. Продукция сертифицирована. </p>
+            <p>Адрес:  СПб, Седова, 37 А, БЦ «Кристалл».</p>
+            <p>Все права защищены. Продукция сертифицирована.</p>
             <p>Страна изготовитель Израиль.</p>
         </div>
     </div>
@@ -407,8 +419,8 @@
 
     <div class="footer desktop-page">
         <div class="content">
-            <p>Адрес: Санкт-Петербург Невский 34 а.</p>
-            <p>Все права защищены. Продукция сертифицирована. </p>
+            <p>Адрес:  СПб, Седова, 37 А, БЦ «Кристалл».</p>
+            <p>Все права защищены. Продукция сертифицирована.</p>
             <p>Страна изготовитель Израиль.</p>
         </div>
     </div>

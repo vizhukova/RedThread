@@ -9,6 +9,19 @@ $(document).ready(function () {
     var modalForm = $('#modalForm');
     var backgroundNode = $('#backgroundNode');
     var carouselInitialized = false;
+    var lastSlide = 8;
+    var firstSlide = 1;
+
+
+    var namePrice = $('#namePrice');
+    var priceValue = $('#price');
+    var prices = [
+        {name: "1 нить", price: "190руб"},
+        {name: "3 нить", price: "490руб (комплект)"},
+        {name: "5 нить", price: "790руб (комплект)"}
+    ];
+
+    setPriceName(prices[0].name, prices[0].price);
 
     //initialize swiper when document ready
     var mySwiper = new Swiper ('.swiper-container', {
@@ -28,7 +41,8 @@ $(document).ready(function () {
           forcedImageWidth: forcedImageWidth,
           forcedImageHeight: 'auto',
           separationMultiplier: 0.9,
-          separation: 50
+          separation: 50,
+          movingToCenter: movingToCenterPrice
         });
 
         var separationVideo = window.innerWidth <= 320 ? 50 : 100;
@@ -76,7 +90,7 @@ $(document).ready(function () {
         SetMinHeightSlide();
         carouselReload();
 
-        if(window.innerWidth <= 800 && mySwiper.activeIndex === 1) {
+        if(window.innerWidth <= 800 && mySwiper.activeIndex === firstSlide) {
             $('.header-up').addClass('hidden');
         }
     });
@@ -112,6 +126,19 @@ $(document).ready(function () {
         iframeVideo.addClass('hidden');
     }
 
+    function movingToCenterPrice(item) {
+        var num = item[0].dataset.num;
+
+        if(num) {
+            setPriceName(prices[num].name, prices[num].price);
+        }
+    }
+
+    function setPriceName(name, price) {
+        $(namePrice).html(name);
+        $(priceValue).html(price);
+    }
+
     function carouselReload() {
 
         carousel.reload({
@@ -142,8 +169,8 @@ $(document).ready(function () {
         
         var index =  swiper.activeIndex;
 
-        index = index === 0 ? 7 : index;
-        index = index === 8 ? 1 : index;
+        index = index === firstSlide - 1 ? lastSlide : index;
+        index = index === lastSlide + 1 ? firstSlide : index;
 
         console.log(index)
         if(index == 1) { $('#hand').removeClass('hidden');}
@@ -155,7 +182,7 @@ $(document).ready(function () {
         backgroundNode.children().removeClass('active');
         $( backgroundNode.children()[index - 1]).addClass('active');
 
-        if(index == 1 || index == 8) {
+        if(index == firstSlide || index == lastSlide + 1) {
 
             $('#hand').removeClass('hidden');
 
@@ -164,7 +191,7 @@ $(document).ready(function () {
         }
 
          if(window.innerWidth <= 800) {
-            if(index == 1 || index == 8) {
+            if(index == firstSlide || index == lastSlide + 1) {
                 $('.header-up').addClass('hidden');
             } else {
                 $('.header-up').removeClass('hidden');
@@ -185,7 +212,7 @@ $(document).ready(function () {
     }
 
     label.on('click', function (e) {
-        mySwiper.slideTo(1);
+        mySwiper.slideTo(firstSlide);
         afterSlidePage();
     });
 
@@ -201,7 +228,7 @@ $(document).ready(function () {
          afterSlidePage();
 
         if(window.innerWidth <= 800) {
-            if(num == 1 || num == 8) {
+            if(num == firstSlide || num == lastSlide + 1) {
                 $('.header-up').addClass('hidden');
             } else {
                 $('.header-up').removeClass('hidden');
@@ -214,7 +241,7 @@ $(document).ready(function () {
 
     function goToSlide1Mobile(e) {
          $('.header-up').addClass('hidden');
-         if(mySwiper) mySwiper.slideTo(1);
+         if(mySwiper) mySwiper.slideTo(firstSlide);
 
          if(e) e.stopPropagation();
     }

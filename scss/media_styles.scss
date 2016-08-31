@@ -61,7 +61,7 @@
 
 }
 
-@media (max-width: 925px) {
+@media ( (max-width: 925px) or (max-height: 700px)) {
 
   html {
     font-size: 13px;
@@ -91,6 +91,12 @@
   //  background-position: 0% 94px;
   //}
 
+}
+
+@media screen and (max-height: 730px) {
+  #backgroundNode {
+    bottom: 34px;
+  }
 }
 /*mobile version*/
 
