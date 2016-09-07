@@ -13,13 +13,16 @@ $(document).ready(function () {
     var firstSlide = 1;
 
 
-    var namePrice = $('#namePrice');
-    var priceValue = $('#price');
+    var spanPriceName = $('#spanPriceName');
+    var inputPriceName = $('#inputPriceName');
+    var spanPriceValue = $('#spanPriceValue');
+    var inputPriceValue = $('#inputPriceValue');
     var prices = [
         {name: "1 нить", price: "190руб"},
         {name: "3 нить", price: "490руб (комплект)"},
         {name: "5 нить", price: "790руб (комплект)"}
     ];
+    var currenrPrice;
 
     setPriceName(prices[0].name, prices[0].price);
 
@@ -135,8 +138,17 @@ $(document).ready(function () {
     }
 
     function setPriceName(name, price) {
-        $(namePrice).html(name);
-        $(priceValue).html(price);
+
+        $(spanPriceName).html(name);
+        $(spanPriceValue).html(price);
+
+        $(inputPriceName).val(name);
+        $(inputPriceValue).val(price);
+
+        currenrPrice = {
+            name: name,
+            price: price
+        };
     }
 
     function carouselReload() {
@@ -147,7 +159,8 @@ $(document).ready(function () {
           forcedImageWidth: forcedImageWidth,
           forcedImageHeight: 'auto',
           separationMultiplier: 0.9,
-          separation: 50
+          separation: 50,
+          movingToCenter: movingToCenterPrice
         });
 
         videoCarousel.reload({
@@ -200,6 +213,11 @@ $(document).ready(function () {
 
         afterSlidePage();
     }
+
+    $('.read-more').on('click', function(e) {
+       e.preventDefault();
+        goToPage(2);
+    });
 
     backgroundNode.on('click', function(e) {
         var num = e.target.dataset.num;
@@ -278,7 +296,9 @@ $(document).ready(function () {
     });
 
     $('.get-call').on('click', function() {
-        goToPage(6);
+        // goToPage(6);
+        $('#modalFormConsultation').removeClass('hidden');
+         window.scrollTo(0, 0);
     });
 
     $('.form').on('submit', function(e) {

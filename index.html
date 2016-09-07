@@ -108,7 +108,7 @@
                         <h4>Позаботьтесь о себе и родных вам людях!</h4>
             
                         <p>Надежная защита от негативной энергетики, сглаза, порчи и жизненных неудач, вызванных ими.</p>
-                        <a href="">Читать подробнее</a>
+                        <a href="" class="read-more">Читать подробнее</a>
                     </div>
             
                     <div class="right-block">
@@ -309,7 +309,6 @@
                         <img data-num="0" src="./res/book1.png" alt="">
                         <img data-num="1" src="./res/book1.png" alt="">
                         <img data-num="2" src="./res/book1.png" alt="">
-                        <img data-num="0" src="./res/book1.png" alt="">
                         <div class="arrow arrow_left active"></div>
                         <div class="arrow arrow_right active"></div>
                     </div>
@@ -325,7 +324,7 @@
                         Материал: <span>Шерсть.</span></br>
                         В комлекте: <span>Молитва и правила использования.</span></br>
                         Страна-производитель: <span>Израиль.</span></br>
-                        Цена: <span class="price"><span id="namePrice"></span> = <span id="price"></span></span>
+                        Цена: <span class="price"><span id="spanPriceName"></span> = <span id="spanPriceValue"></span></span>
                     </p>
                 </div>
             
@@ -433,25 +432,29 @@
                      <p>Заказать оригинальную </p>
                      <p>красную нить очень легко!</p>
                  </h4>
-                 <p>Посто заполните правильно форму</p>
+                 <p>Просто заполните правильно форму</p>
                  <p>и начните притягивать удачу прямо сейчас!</p>
          
                  <form class="form">
                      <input type="text" name="name" id="name" placeholder="Ваше имя">
                      <input type="text" name="surname" id="surname" placeholder="Ваша фамилия" required>
                      <input type="text" name="number" id="number" placeholder="Ваш номер телефона" required>
-                     <input type="email" name="email" id="email" placeholder="Ваш email " required>
+                     <input type="email" name="email" id="email" placeholder="Ваш email" required>
+                     <input type="text" name="city" id="city" placeholder="Город" required>
+                     <input type="text" name="address" id="address" placeholder="Адрес доставки" required>
+                     <input type="hidden" name="quantity" id="inputPriceName" value="">
+                     <input type="hidden" name="price" id="inputPriceValue" value="">
          
-                     <select name="city" id="city" required>
-                         <option disabled selected value> Город </option>
-                         <option value="city1">city1</option>
-                         <option value="city2">city2</option>
-                     </select>
+                     <!--<select name="city" id="city" required>-->
+                         <!--<option disabled selected value> Город </option>-->
+                         <!--<option value="city1">city1</option>-->
+                         <!--<option value="city2">city2</option>-->
+                     <!--</select>-->
          
                      <select name="delivery" id="delivery" required>
-                         <option disabled selected value> Способ доставки  </option>
-                         <option value="delivery1">delivery1</option>
-                         <option value="delivery2">delivery2</option>
+                         <option disabled selected value> Способ доставки</option>
+                         <option value="Самовывоз (только СПб)">Самовывоз (только СПб)</option>
+                         <option value="Почта России">Почта России</option>
                      </select>
          
                      <button>Заказать Красную нить</button>

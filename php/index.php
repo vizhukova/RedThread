@@ -30,10 +30,13 @@ if ($_POST) {
             $number = $_POST["number"];
             $email = $_POST["email"];
             $city = $_POST["city"];
+            $address = $_POST["address"];
             $delivery = $_POST["delivery"];
+            $quantity = $_POST["quantity"];
+            $price = $_POST["price"];
 
-         if ( strlen($_POST["name"])!=0 && strlen($_POST["surname"])!=0  && strlen($_POST["number"])!=0 && strlen($_POST["email"])!=0
-         && strlen($_POST["city"])!=0 && strlen($_POST["delivery"])!=0 )
+         if ( strlen( $name )!=0 && strlen( $surname )!=0  && strlen( $number )!=0 && strlen( $email )!=0
+         && strlen( $city )!=0 && strlen( $address )!=0 && strlen( $delivery )!=0 )
          {
 
              if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -62,7 +65,7 @@ if ($_POST) {
               'last_name'=>$surname,
               'country'=>'Россия',
               'city'=>$city,
-              'description'=>"Тип: 'Заказ', Тип доставки: $delivery",
+              'description'=>"\n Тип: 'Заказ',\n Тип доставки: $delivery,\n Адрес доставки: $address,\n Количество: $quantity,\n Цена: $price",
               'email'=>$email
               );
 
@@ -80,7 +83,7 @@ if ($_POST) {
 
               // //Отправляем email админу
               $subject = 'Заказ красной нити';
-              $message = "Имя: $name \nФамилия: $surname \nТелефон: $number \nEmail: $email \nГород: $city \nТип доставки: $delivery";
+              $message = "Имя: $name \nФамилия: $surname \nТелефон: $number \nEmail: $email \nГород: $city \nТип доставки: $delivery \nАдрес доставки: $address \nКоличество: $quantity \nЦена: $price";
 
               mail($admin_email, $subject, $message);
 
@@ -143,7 +146,7 @@ if ($_POST) {
             'name'=>$name,
             'last_name'=>$surname,
             'country'=>'Россия',
-            'description'=>"Тип: 'Консультация', Комментарий клиента: $comment",
+            'description'=>"\n Тип: 'Консультация',\n Комментарий клиента: $comment",
             'email'=>$email
             );
 

@@ -5,25 +5,29 @@
             <p>Заказать оригинальную </p>
             <p>красную нить очень легко!</p>
         </h4>
-        <p>Посто заполните правильно форму</p>
+        <p>Просто заполните правильно форму</p>
         <p>и начните притягивать удачу прямо сейчас!</p>
 
         <form class="form">
             <input type="text" name="name" id="name" placeholder="Ваше имя">
             <input type="text" name="surname" id="surname" placeholder="Ваша фамилия" required>
             <input type="text" name="number" id="number" placeholder="Ваш номер телефона" required>
-            <input type="email" name="email" id="email" placeholder="Ваш email " required>
+            <input type="email" name="email" id="email" placeholder="Ваш email" required>
+            <input type="text" name="city" id="city" placeholder="Город" required>
+            <input type="text" name="address" id="address" placeholder="Адрес доставки" required>
+            <input type="hidden" name="quantity" id="inputPriceName" value="">
+            <input type="hidden" name="price" id="inputPriceValue" value="">
 
-            <select name="city" id="city" required>
-                <option disabled selected value> Город </option>
-                <option value="city1">city1</option>
-                <option value="city2">city2</option>
-            </select>
+            <!--<select name="city" id="city" required>-->
+                <!--<option disabled selected value> Город </option>-->
+                <!--<option value="city1">city1</option>-->
+                <!--<option value="city2">city2</option>-->
+            <!--</select>-->
 
             <select name="delivery" id="delivery" required>
-                <option disabled selected value> Способ доставки  </option>
-                <option value="delivery1">delivery1</option>
-                <option value="delivery2">delivery2</option>
+                <option disabled selected value> Способ доставки</option>
+                <option value="Самовывоз (только СПб)">Самовывоз (только СПб)</option>
+                <option value="Почта России">Почта России</option>
             </select>
 
             <button>Заказать Красную нить</button>

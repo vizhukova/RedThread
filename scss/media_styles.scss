@@ -61,23 +61,6 @@
 
 }
 
-@media ( (max-width: 925px) or (max-height: 700px)) {
-
-  html {
-    font-size: 13px;
-  }
-  .slide1 {
-    .left-block {
-      img {
-        top: 63%;
-        height: 120%;
-        left: 0;
-      }
-    }
-  }
-
-}
-
 @media (min-width: 812px) {
   .desktop-page, img.background-node, div.header {
     display: block;
@@ -98,6 +81,19 @@
     bottom: 34px;
   }
 }
+
+@media screen and (min-height: 815px) {
+  div.hand {
+    background-position: 20% 135px ;
+  }
+}
+
+@media screen and (min-height: 1080px) {
+  div.hand {
+    background-position: 20% 192px ;
+  }
+}
+
 /*mobile version*/
 
 @media screen and (max-width: 800px) {
@@ -438,3 +434,19 @@
   }
 }
 
+@media screen and (max-width: 925px),  screen and (max-height: 700px) {
+
+  html {
+    font-size: 13px;
+  }
+  .slide1 {
+    .left-block {
+      img {
+        top: 63%;
+        height: 120%;
+        left: 0;
+      }
+    }
+  }
+
+}
